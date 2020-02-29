@@ -1,6 +1,6 @@
 [build]
-  command = "yarn build"
-  functions = "lambda"
+  command = "npm run build"
+  functions = "build-lambda"
   publish = "build/"
 [template.environment]
   API_KEY="Set your Dark Skyy API key"

@@ -62,7 +62,7 @@ typings/
 
 # builds
 build/
-lambda/
+build-lambda/
 
 # Netlify
 .netlify
