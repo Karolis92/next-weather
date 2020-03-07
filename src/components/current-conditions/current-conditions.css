@@ -1,0 +1,12 @@
+.CurrentConditions {
+    background-color: #DBDCE1;
+}
+
+.CurrentConditions_city-name {
+    font-size: 3.5em;
+}
+
+.CurrentConditions_temperature {
+    font-size: 6em;
+    font-weight: 600;
+}
