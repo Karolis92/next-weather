@@ -5,7 +5,7 @@
   "proxy": "http://localhost:9000",
   "scripts": {
     "start": "react-scripts start",
-    "start:lambda": "netlify-lambda serve lambda",
+    "start:lambda": "netlify-lambda build lambda && netlify-lambda serve lambda",
     "build": "react-scripts build && netlify-lambda build lambda",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
@@ -37,6 +37,6 @@
     "request-promise": "^4.2.5"
   },
   "devDependencies": {
-    "netlify-lambda": "^1.6.3"
+    "netlify-lambda": "^2.0.3"
   }
 }
