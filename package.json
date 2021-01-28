@@ -5,7 +5,7 @@
   "proxy": "http://localhost:9000",
   "scripts": {
     "start": "react-scripts start",
-    "start:lambda": "netlify-lambda build lambda && netlify-lambda serve lambda",
+    "start:lambda": "netlify-lambda serve lambda",
     "build": "react-scripts build && netlify-lambda build lambda",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
@@ -26,15 +26,15 @@
     ]
   },
   "dependencies": {
-    "@testing-library/jest-dom": "^4.2.4",
-    "@testing-library/react": "^9.4.1",
-    "@testing-library/user-event": "^7.2.1",
-    "bulma": "^0.8.0",
-    "react": "^16.13.0",
-    "react-dom": "^16.13.0",
-    "react-scripts": "3.4.0",
+    "@testing-library/jest-dom": "^5.11.9",
+    "@testing-library/react": "^11.2.3",
+    "@testing-library/user-event": "^12.6.2",
+    "bulma": "^0.9.2",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1",
+    "react-scripts": "^4.0.1",
     "request": "^2.88.2",
-    "request-promise": "^4.2.5"
+    "request-promise": "^4.2.6"
   },
   "devDependencies": {
     "netlify-lambda": "^2.0.3"
