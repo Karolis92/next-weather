@@ -23,6 +23,15 @@ function CurrentConditions({ conditions }) {
                         <h1 className="title is-1">
                             Vilnius
                         </h1>
+                        {conditions &&
+                            <div>
+                                <div className={styles.wind_arrow}
+                                    style={{ transform: `rotate(${conditions.wind_deg}deg)` }}>
+                                    ⮟
+                                </div>
+                                <p className="title is-4">{conditions.wind_speed} m/s</p>
+                            </div>
+                        }
                     </div>
                     <div className="column is-two-thirds">
                         <div className={`${styles.temperature} title`}>
@@ -57,7 +66,7 @@ function CurrentConditions({ conditions }) {
                     </div>
                 </div>
             </div>
-        </section >
+        </section>
     );
 }
 
