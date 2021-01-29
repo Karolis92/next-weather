@@ -1,7 +1,7 @@
 const request = require("request-promise");
 
 const { API_KEY } = process.env;
-const API_URL = `https://api.darksky.net/forecast/${API_KEY}`;
+const API_URL = `https://api.openweathermap.org/data/2.5/onecall?appid=${API_KEY}`;
 
 let { CORS_WHITELIST } = process.env;
 if (CORS_WHITELIST) {
@@ -13,7 +13,7 @@ const getResponseHeaders = request => {
     "content-type": "application/json"
   };
   const { origin } = request.headers;
-  if (origin && (!CORS_WHITELIST || CORS_WHITELIST.includes(origin))) {
+  if (origin && CORS_WHITELIST?.includes(origin)) {
     headers["Access-Control-Allow-Origin"] = origin;
   }
   return headers;
@@ -27,16 +27,11 @@ exports.handler = (event, context, callback) => {
     return;
   }
 
-  const url = `${API_URL}/${lat},${lon}`;
-  // Remove lat and lon parameters, they go in the URL
-  delete qs.lat;
-  delete qs.lon;
-
   const options = {
     qs,
     json: true
   };
-  request(url, options)
+  request(API_URL, options)
     .then(response => {
       callback(null, {
         body: JSON.stringify(response),

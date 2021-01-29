@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import CurrentConditions from '../current-conditions/current-conditions';
 import Header from '../header/header';
-import './app.css';
 
 function App() {
   const [forecast, setForecast] = useState();
@@ -15,7 +14,7 @@ function App() {
     setError(undefined);
     setForecast(undefined);
 
-    fetch('/.netlify/functions/forecast?lat=54.7009&lon=25.2515&units=si')
+    fetch('/.netlify/functions/forecast?lat=54.6892&lon=25.2798&units=metric')
       .then(res => res.json())
       .then(
         (result) => ignore || setForecast(result),
@@ -31,11 +30,11 @@ function App() {
       <Header
         error={error}
         loading={loading}
-        lastUpdate={forecast && forecast.currently.time}
+        lastUpdate={forecast?.current.dt}
         update={() => setTriggered(new Date())}>
       </Header>
       <CurrentConditions
-        conditions={forecast && forecast.currently}>
+        conditions={forecast?.current}>
       </CurrentConditions>
     </>
   );

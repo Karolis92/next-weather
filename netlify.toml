@@ -3,6 +3,6 @@
   functions = "build-lambda"
   publish = "build/"
 [template.environment]
-  API_KEY="Set your Dark Skyy API key"
+  API_KEY="Set your OpenWeather API key"
   CORS_WHITELIST="Optional comma-separated list of allowed cross-origin domains"
 
