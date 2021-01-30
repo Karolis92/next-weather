@@ -1,9 +1,10 @@
 import { useEffect, useState } from 'react';
+import { OneCallWeatherDto } from '../../one-call-weather-dto.model';
 import CurrentConditions from '../current-conditions/current-conditions';
 import Header from '../header/header';
 
 function App() {
-  const [forecast, setForecast] = useState<any>();
+  const [forecast, setForecast] = useState<OneCallWeatherDto>();
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<any>();
   const [triggered, setTriggered] = useState(new Date());

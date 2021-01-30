@@ -1,7 +1,7 @@
-import React from 'react';
+import { Conditions } from '../../one-call-weather-dto.model';
 import styles from './current-conditions.module.css';
 
-function CurrentConditions({ conditions }: { conditions: any }) {
+function CurrentConditions({ conditions }: { conditions?: Conditions }) {
 
     function getDisplayText(selector: (c: any) => string) {
         return !conditions ? '?' : selector(conditions);
