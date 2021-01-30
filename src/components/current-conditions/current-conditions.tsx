@@ -1,17 +1,17 @@
 import React from 'react';
 import styles from './current-conditions.module.css';
 
-function CurrentConditions({ conditions }) {
+function CurrentConditions({ conditions }: { conditions: any }) {
 
-    function getDisplayText(selector) {
+    function getDisplayText(selector: (c: any) => string) {
         return !conditions ? '?' : selector(conditions);
     }
 
-    function getDisplayTemperature(selector) {
+    function getDisplayTemperature(selector: (c: any) => number) {
         return !conditions ? '?' : `${selector(conditions).toFixed(1)}°C`;
     }
 
-    function getDisplayPercentage(selector) {
+    function getDisplayPercentage(selector: (c: any) => number) {
         return !conditions ? '?' : `${selector(conditions)}%`;
     }
 

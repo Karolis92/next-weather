@@ -1,7 +1,6 @@
-import React from 'react';
 import styles from './header.module.css';
 
-function Header(props) {
+function Header(props: { error: any, loading: boolean, lastUpdate: number, update: () => void }) {
     return (
         <section className={`${styles.section} section py-4 ${props.error ? 'has-background-danger' : ''}`}>
             <div className={`${styles.container} container`}>

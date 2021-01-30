@@ -1,11 +1,11 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import CurrentConditions from '../current-conditions/current-conditions';
 import Header from '../header/header';
 
 function App() {
-  const [forecast, setForecast] = useState();
+  const [forecast, setForecast] = useState<any>();
   const [loading, setLoading] = useState(true);
-  const [error, setError] = useState();
+  const [error, setError] = useState<any>();
   const [triggered, setTriggered] = useState(new Date());
 
   useEffect(() => {
@@ -22,7 +22,7 @@ function App() {
       )
       .then(() => setLoading(false));
 
-    return () => ignore = true;
+    return () => { ignore = true; };
   }, [triggered]);
 
   return (
@@ -31,11 +31,9 @@ function App() {
         error={error}
         loading={loading}
         lastUpdate={forecast?.current.dt}
-        update={() => setTriggered(new Date())}>
-      </Header>
+        update={() => setTriggered(new Date())} />
       <CurrentConditions
-        conditions={forecast?.current}>
-      </CurrentConditions>
+        conditions={forecast?.current} />
     </>
   );
 }

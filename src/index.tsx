@@ -1,8 +1,8 @@
+import 'bulma/css/bulma.css';
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import 'bulma/css/bulma.css';
 import App from './components/app/app';
+import './index.css';
 import * as serviceWorker from './serviceWorker';
 
 ReactDOM.render(<App />, document.getElementById('root'));
