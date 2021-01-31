@@ -1,41 +1,36 @@
-import { useEffect, useState } from 'react';
-import { OneCallWeatherDto } from '../../one-call-weather-dto.model';
-import CurrentConditions from '../current-conditions/current-conditions';
+import { useState } from 'react';
+import { useForecast } from '../../hooks/use-forecast';
+import { Conditions } from '../../one-call-weather-dto.model';
+import ConditionsView from '../conditions-view/conditions-view';
 import Header from '../header/header';
+import HourlyScroller from '../hourly-scroller/hourly-scroller';
+import { Spinner } from '../spinner/spinner';
+import styles from './app.module.css';
 
 function App() {
-  const [forecast, setForecast] = useState<OneCallWeatherDto>();
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState<any>();
-  const [triggered, setTriggered] = useState(new Date());
-
-  useEffect(() => {
-    let ignore = false;
-    setLoading(true);
-    setError(undefined);
-    setForecast(undefined);
-
-    fetch('/.netlify/functions/forecast?lat=54.6892&lon=25.2798&units=metric')
-      .then(res => res.json())
-      .then(
-        (result) => ignore || setForecast(result),
-        (error) => ignore || setError(error)
-      )
-      .then(() => setLoading(false));
-
-    return () => { ignore = true; };
-  }, [triggered]);
+  const { forecast, error, loading, reload } = useForecast();
+  const [selected, setSelected] = useState<Conditions>();
 
   return (
-    <>
+    <div className={styles.app}>
       <Header
         error={error}
         loading={loading}
         lastUpdate={forecast?.current.dt}
-        update={() => setTriggered(new Date())} />
-      <CurrentConditions
-        conditions={forecast?.current} />
-    </>
+        update={reload} />
+
+      {loading && <Spinner />}
+
+      {!loading && forecast &&
+        <main className={styles.main_content}>
+          <HourlyScroller
+            hourlyConditions={forecast.hourly}
+            selected={selected}
+            select={setSelected} />
+          <ConditionsView conditions={selected} />
+        </main>
+      }
+    </div>
   );
 }
 

@@ -1,4 +1,4 @@
-body {
-    background-color: #3762C2;
-    height: 100vh;
+html {
+    overflow-y: auto;
+    background-color: #8789f0;
 }

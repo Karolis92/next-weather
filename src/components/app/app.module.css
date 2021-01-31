@@ -1,0 +1,9 @@
+.app {
+    height: 100vh;
+    display: grid;
+    grid-template-rows: min-content 1fr
+}
+
+.main_content {
+    position: relative;
+}

@@ -14,7 +14,13 @@
     "extends": [
       "react-app",
       "react-app/jest"
-    ]
+    ],
+    "rules": {
+      "semi": [
+        "error",
+        "always"
+      ]
+    }
   },
   "browserslist": {
     "production": [
@@ -40,6 +46,7 @@
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-scripts": "^4.0.1",
+    "react-waypoint": "^9.0.3",
     "request": "^2.88.2",
     "request-promise": "^4.2.6",
     "typescript": "^4.1.3"

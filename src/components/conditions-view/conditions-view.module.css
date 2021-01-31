@@ -1,5 +1,5 @@
 .section {
-    background-color: #DBDCE1;
+    margin-left: 100px;
 }
 
 .temperature {
@@ -7,5 +7,5 @@
 }
 
 .wind_arrow {
-    font-size: 4rem;
+    font-size: 3.5rem;
 }
