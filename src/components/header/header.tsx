@@ -16,7 +16,7 @@ function Header(props: { error: any, loading: boolean, lastUpdate?: number, upda
                 </div>
             </div>
         </section>
-    )
+    );
 }
 
 export default memo(Header);
