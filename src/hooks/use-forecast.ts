@@ -11,7 +11,6 @@ export function useForecast() {
         let ignore = false;
         setLoading(true);
         setError(false);
-        setForecast(undefined);
 
         fetch('/.netlify/functions/forecast?lat=54.6892&lon=25.2798&units=metric')
             .then(res => res.json())

@@ -4,37 +4,9 @@ export interface OneCallWeatherDto {
     timezone: string;
     timezone_offset: number;
     current: CurrentConditions;
-    minutely: { dt: number; precipitation: number; }[];
+    minutely: MinutelyConditions[];
     hourly: HourlyConditions[];
-    daily: {
-        dt: number;
-        sunrise: number;
-        sunset: number;
-        temp: {
-            min: number;
-            max: number;
-            morn: number;
-            day: number;
-            eve: number;
-            night: number;
-        };
-        feels_like: {
-            morn: number;
-            day: number;
-            eve: number;
-            night: number;
-        };
-        pressure: number;
-        humidity: number;
-        dew_point: number;
-        wind_speed: number;
-        wind_deg: number;
-        weather: Weather[];
-        clouds: number;
-        pop: number;
-        snow: number;
-        uvi: number;
-    }[]
+    daily: DailyConditions[]
 }
 
 export interface Conditions {
@@ -59,6 +31,41 @@ export interface CurrentConditions extends Conditions {
 
 export interface HourlyConditions extends Conditions {
     pop: number;
+}
+
+export interface MinutelyConditions {
+    dt: number;
+    precipitation: number;
+}
+
+export interface DailyConditions {
+    dt: number;
+    sunrise: number;
+    sunset: number;
+    temp: {
+        min: number;
+        max: number;
+        morn: number;
+        day: number;
+        eve: number;
+        night: number;
+    };
+    feels_like: {
+        morn: number;
+        day: number;
+        eve: number;
+        night: number;
+    };
+    pressure: number;
+    humidity: number;
+    dew_point: number;
+    wind_speed: number;
+    wind_deg: number;
+    weather: Weather[];
+    clouds: number;
+    pop: number;
+    snow: number;
+    uvi: number;
 }
 
 export interface Weather {
