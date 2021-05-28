@@ -1,0 +1,39 @@
+.forecast_header {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  column-gap: 30px;
+}
+
+.overview {
+  color: white;
+  font-weight: 300;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.temps {
+  display: grid;
+  grid-template-columns: 1fr max-content;
+  align-items: end;
+}
+
+.current_temperature {
+  font-size: 10rem;
+  line-height: 1;
+}
+
+.min_max {
+  margin-left: 1rem;
+}
+
+.min_max > div:not(:last-child) {
+  margin-bottom: 0.5rem;
+}
+
+.description {
+  font-size: 4rem;
+}

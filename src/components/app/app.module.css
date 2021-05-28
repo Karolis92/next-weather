@@ -1,5 +1,6 @@
 .app {
-    height: 100vh;
-    display: grid;
-    grid-template-rows: min-content 1fr
+  min-height: 100vh;
+  display: grid;
+  grid-template-rows: min-content 1fr;
+  background: linear-gradient(-25deg, rgba(0, 212, 255, 1) 0, rgb(8, 0, 167) 120vh);
 }
