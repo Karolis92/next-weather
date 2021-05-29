@@ -1,0 +1,22 @@
+html {
+    overflow-y: auto;
+    font-size: 2vw;
+}
+
+@media only screen and (min-width: 600px) {
+    html {
+        font-size: 12px;
+    }    
+}
+
+@media only screen and (min-width: 1000px) {
+    html {
+        font-size: 16px;
+    }    
+}
+
+@media only screen  and (max-height: 400px) {
+    html {
+        font-size: 1.8vh;
+    }    
+}
